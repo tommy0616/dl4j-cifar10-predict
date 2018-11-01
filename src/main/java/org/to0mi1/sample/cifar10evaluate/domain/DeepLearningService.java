@@ -1,7 +1,7 @@
 package org.to0mi1.sample.cifar10evaluate.domain;
 
 import org.datavec.image.loader.NativeImageLoader;
-import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
+import org.deeplearning4j.parallelism.ParallelInference;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.dataset.api.preprocessor.DataNormalization;
 import org.nd4j.linalg.dataset.api.preprocessor.ImagePreProcessingScaler;
@@ -30,7 +30,7 @@ public class DeepLearningService {
             "truck"};
 
     @Autowired
-    private MultiLayerNetwork multiLayerNetwork;
+    private ParallelInference multiLayerNetwork;
 
     public List<ResultDto> predict(InputStream is) {
 
